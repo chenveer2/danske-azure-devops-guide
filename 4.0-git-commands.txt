@@ -1,0 +1,23 @@
+newfile - untracked file       -  working area
+#you need to initialize git repo - one time activity   (git init)  - (create .git folder)
+add file to git repo           -  staging area   (git add <filename>)
+commit the file under git repo -  local git repo (git commit -m "<any message>")
+
+
+-
+-
+-
+-
+
+share the file at remote git repo - repo git repo (git push <filename>)
+=================================================================================
+
+#to create ssh keys
+
+ssh-keygen
+ll /root/.ssh
+cat /root/.ssh/id_rsa.pub
+ssh -T git@github.com
+git remote -v
+git remote add origin git@github.com:<your github account name>/danske-python-sample-vscode-flask-tutorial.git
+git push -u origin master
