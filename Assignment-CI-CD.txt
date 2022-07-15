@@ -1,0 +1,29 @@
+# Lab 1 : Build Python flask code locally and deploy to webapp using cli manually.
+
+https://github.com/Microsoft/python-sample-vscode-flask-tutorial
+
+mkdir azure-devops
+cd azure-devops
+git clone https://github.com/Microsoft/python-sample-vscode-flask-tutorial
+cd python-sample-vscode-flask-tutorial
+
+---------------------------------------
+# In case you are working on windows env
+
+PS C:\azure-devops\python-sample-vscode-flask-tutorial> py -m venv venv
+PS C:\azure-devops\python-sample-vscode-flask-tutorial> .\venv\Scripts\Activate.ps1
+(venv) PS C:\azure-devops\python-sample-vscode-flask-tutorial> pip install -r requirements.txt
+(venv) PS C:\azure-devops\python-sample-vscode-flask-tutorial> $env:FLASK_APP = "hello_app.webapp"
+(venv) PS C:\azure-devops\python-sample-vscode-flask-tutorial> python -m flask run
+
+Goto browser and run "http://127.0.0.1:5000" or open terminal and run "curl  http://127.0.0.1:5000"
+============================================================================
+
+#create web app
+az group create --name pythonwebapprg --location westus
+az appservice plan create --resource-group pythonwebapprg --name pythonwebappplan --is-linux --sku B1
+az webapp create --resource-group pythonwebapprg --plan pythonwebappplan --name pythonwebappamit1 --runtime "Python|3.8"
+# for windows cli or Powershell, use --runtime "Python:3.8"
+
+create pipeline to deploy python application to webapp using azure repo.
+
