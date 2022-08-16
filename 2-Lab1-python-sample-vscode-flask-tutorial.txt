@@ -45,7 +45,7 @@ sudo /usr/bin/pip3 install --system decorator
 az webapp create --resource-group pythonwebapprg --plan pythonwebappplan --name pythonwebappamit1 --runtime "Python|3.8"
 # for windows cli or Powershell, use --runtime "Python:3.8"
 
-#manual deployment to web app
+#manual deployment to web app (through powershell orlinux shell because webapp is linux based) 
 az webapp up -n <your-appservice>          #will create new webapp
 az webapp config set -g <your-resource-group> -n <your-appservice> --startup-file <your-startup-file-or-command>
 
