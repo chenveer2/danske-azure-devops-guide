@@ -31,7 +31,7 @@ az account show      # verify default subs changed
 sudo su -
 apt-get update
 git --version
-apt-get install python 3.8.10
+apt-get install python3.8     # python 3.8.10 should already be installed on your ubuntu VM
 python3 --version
 apt-get install docker.io
 docker --version
